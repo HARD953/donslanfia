@@ -39,6 +39,7 @@ class DonateurUser(AbstractBaseUser,PermissionsMixin):
     adresse=models.CharField(max_length=30,default="null")
     numero1=models.CharField(max_length=30)
     last_login = models.DateTimeField(('last_login'), default=timezone.now())
+    updated_at = models.DateTimeField(auto_now=True)
     objects=CustumerAccountManager()
     # adresse=models.CharField(max_length=300, blank=True, null=True)
     # about_me=models.TextField(max_length=500, blank=True, null=True)
@@ -85,6 +86,8 @@ class EffectuerDonArge(models.Model):
     payement_date=models.CharField(max_length=100,default='null')
     payement_method=models.CharField(max_length=100,default='null')
     status=models.CharField(max_length=100,default='null')
+    updated_at = models.DateTimeField(auto_now=True)
+    
 
 
     # x=["Etat","photo","lieu_reception","donateur","typeD","categorieV","cibleV","montant","provider","categorieObjet","typeObjet"]
@@ -110,6 +113,7 @@ class EffectuerDonNature(models.Model):
     affecter = models.BooleanField (default=False)
     distribuer = models.BooleanField (default=False)
     create=models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     # x=["Etat","photo","lieu_reception","donateur","typeD","categorieV","cibleV","montant","provider","categorieObjet","typeObjet"]
     def __str__(self):

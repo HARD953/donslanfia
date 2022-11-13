@@ -19,7 +19,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 from rest_framework import status
 from django.http import Http404
-
+from django.utils import timezone
 from rest_framework_simplejwt.tokens import RefreshToken
 
 # Create your views here.
@@ -315,17 +315,18 @@ class EtatArge(APIView):
         don=EffectuerDonArge.objects.get(id=int(data["id"]))
         don.affecter=True
         don.distribuer=True
-        don.save(update_fields=['affecter','distribuer'])
+        don.updated_at=timezone.now()
+        don.save(update_fields=['affecter','distribuer','updated_at'])
         return Response({'status':status.HTTP_200_OK})
 
 class EtatNature(APIView):
     def post(self,request):
         data=self.request.data
-        print(data)
         don=EffectuerDonNature.objects.get(id=int(data["id"]))
         don.affecter=True
         don.distribuer=True
-        don.save(update_fields=['affecter','distribuer'])
+        don.updated_at=timezone.now()
+        don.save(update_fields=['affecter','distribuer','updated_at'])
         return Response({'status':status.HTTP_200_OK})
 
         
