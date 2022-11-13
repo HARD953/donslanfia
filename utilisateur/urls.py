@@ -23,7 +23,8 @@ urlpatterns=format_suffix_patterns([
     #Afficher ses dons
     path('argent/', Argen.as_view(),name='detail-donard'),
     path('natures/', Nature.as_view(),name='detail-donnd'),
-    path('etats/', Etat.as_view(),name='etatss'),
+    path('etatsargent/', EtatArge.as_view(),name='etatsa'),
+    path('etatsnature/', EtatNature.as_view(),name='etatsn'),
 
     path('cibleargent/<str:slug>/', CibleArgent.as_view(),name='cible-donard'),
     path('ciblenatures/<str:slug>/', CibleNature.as_view(),name='cible-donnd'),

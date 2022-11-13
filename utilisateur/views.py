@@ -283,7 +283,6 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
-
 class BlacklistTokenUpdateView(APIView):
     permission_classes = [AllowAny]
     authentication_classes = ()
@@ -309,12 +308,24 @@ class DetailConecter(APIView):
             return Response({'status':status.HTTP_400_BAD_REQUEST})
 
 
-class Etat(APIView):
+class EtatArge(APIView):
     def post(self,request):
         data=self.request.data
-        don=EffectuerDonNature.objects.get(id=data.id)
-        don.status=True
-        don.save(update_fields=['affecter'])
+        print(data)
+        don=EffectuerDonArge.objects.get(id=int(data["id"]))
+        don.affecter=True
+        don.distribuer=True
+        don.save(update_fields=['affecter','distribuer'])
+        return Response({'status':status.HTTP_200_OK})
+
+class EtatNature(APIView):
+    def post(self,request):
+        data=self.request.data
+        print(data)
+        don=EffectuerDonNature.objects.get(id=int(data["id"]))
+        don.affecter=True
+        don.distribuer=True
+        don.save(update_fields=['affecter','distribuer'])
         return Response({'status':status.HTTP_200_OK})
 
         
