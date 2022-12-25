@@ -174,6 +174,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://127.0.0.1:3000",
     "https://127.0.0.1:8000",
     "http://127.0.0.1:9000",
+    "https://apivulnerable.up.railway.app/"
+    "http://apivulnerable.up.railway.app/"
+    "https://lanfiasave.com/"
+    "http://lanfiasave.com/"
  ]
 
 CORS_ALLOW_METHODS = [
