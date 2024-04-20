@@ -99,9 +99,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'railway', 
         'USER': 'postgres', 
-        'PASSWORD': '1BiNai4WvczBTu6iQINc',
-        'HOST': 'containers-us-west-132.railway.app', 
-        'PORT': '8030',
+        'PASSWORD': 'ivNKAfSWJzpiLOinbEZwlwbsAhOjSKMf',
+        'HOST': 'monorail.proxy.rlwy.net', 
+        'PORT': '58605',
     }
 }
 
@@ -174,9 +174,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://127.0.0.1:3000",
     "https://127.0.0.1:8000",
     "http://127.0.0.1:9000",
-    "https://apivulnerable.up.railway.app/"
-    "http://apivulnerable.up.railway.app/"
-    "https://lanfiasave.com/"
+    "https://apivulnerable.up.railway.app/",
+    "http://apivulnerable.up.railway.app/",
+    "https://lanfiasave.com/",
     "http://lanfiasave.com/"
  ]
 
